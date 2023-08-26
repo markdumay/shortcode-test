@@ -22,7 +22,7 @@ For example, let's consider the following shortcodes:
 </div>
 ```
 
-Calling these shortcodes from within a regular page would generate the following HTML output when Goldmark uses safe rendering (omitting HTML input from the output):
+Calling these shortcodes from within a regular page would generate the following HTML output when Goldmark uses **safe rendering** (omitting HTML input from the output):
 
 **Markdown content**
 
@@ -72,7 +72,7 @@ The approach of the `outer` shortcode is unsafe, as the call to `{{ .Inner }}` o
 
 As the children are processed before the parent, and the parent has simply no knowledge of any children, we cannot use `{{ .Inner | .Page.RenderString }}` for `outer.html`. The variable `.Inner` contains generated HTML output of the various calls to `inner.html`. However, we cannot trust the `.Inner` content of `outer.html` as demonstrated earlier.
 
-Instead, a possible workaround could be to be pass any generated output as scratch variable from `inner.html` to its parent (if any).  The parent would consider that scratch variable as safe and generate that output. Any other (remaining) input can be ignored.
+Instead, a possible workaround could be to be pass any generated output as **scratch variable** from `inner.html` to its parent (if any).  The parent would consider that scratch variable as safe and generate that output. Any other (remaining) input can be ignored.
 
 ## Implementation
 
