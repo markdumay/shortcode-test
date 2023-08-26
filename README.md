@@ -81,7 +81,8 @@ This repository contains a working demo of the workaround. It is based on [Hugo'
 Run the following commands to start a local development server.
 
 ```bash
-git clone https://github.com/markdumay/shortcode-test.git && cd shortcode-test
+git clone --recurse-submodules https://github.com/markdumay/shortcode-test.git
+cd shortcode-test
 hugo server
 ```
 
