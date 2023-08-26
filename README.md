@@ -76,4 +76,13 @@ Instead, a possible workaround could be to be pass any generated output as scrat
 
 ## Implementation
 
-This repository contains a working demo of the workaround. It is based on [Hugo's quick start](https://gohugo.io/getting-started/quick-start/).
+This repository contains a working demo of the workaround. It is based on [Hugo's quick start](https://gohugo.io/getting-started/quick-start/). 
+
+Run the following commands to start a local development server.
+
+```bash
+git clone https://github.com/markdumay/shortcode-test.git && cd shortcode-test
+hugo server
+```
+
+Navigate to your local site (usually http://localhost:1313/) within your browser and click on `My First Post`.
