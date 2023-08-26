@@ -1,0 +1,12 @@
+
+{{ if .Parent }}
+    {{ $current := .Parent.Scratch.Get "inner" }}
+    {{ $output := partial "assets/inner.html" (dict "content" (.Inner | .Page.RenderString)) }}
+    {{ if $current }}
+        {{ .Parent.Scratch.Set "inner" (print $current $output) }}
+    {{ else }}
+        {{ .Parent.Scratch.Set "inner" $output }}
+    {{ end }}
+{{ else }}
+    {{ errorf "Inner element should be contained within outer: %s" .Position }}
+{{ end }}

@@ -1,0 +1,8 @@
+<div>
+    {{ .Scratch.Get "inner" | safeHTML }}
+    {{ $input := trim .Inner " \r\n" }}
+    {{ if $input }}
+        {{ $input = replace $input "\n" "\n  " }}
+        {{ warnf "Unexpected inner content: %s\r\n      %s" .Position $input }}
+    {{ end }}
+</div>
