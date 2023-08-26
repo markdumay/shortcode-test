@@ -58,7 +58,7 @@ The approach of the `outer` shortcode is unsafe, as the call to `{{ .Inner }}` o
 {{< /outer >}}
 ```
 
-**Unssafe HTML output**
+**Unsafe HTML output**
 
 ```html   
 <p>Plain content is fine</p>
@@ -68,7 +68,7 @@ The approach of the `outer` shortcode is unsafe, as the call to `{{ .Inner }}` o
 <mark>This unsafe code is not omitted</mark>
 ```
 
-## Possible workaround
+## Suggested workaround
 
 As the children are processed before the parent, and the parent has simply no knowledge of any children, we cannot use `{{ .Inner | .Page.RenderString }}` for `outer.html`. The variable `.Inner` contains generated HTML output of the various calls to `inner.html`. However, we cannot trust the `.Inner` content of `outer.html` as demonstrated earlier.
 
