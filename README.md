@@ -86,4 +86,4 @@ cd shortcode-test
 hugo server
 ```
 
-Navigate to your local site (usually http://localhost:1313/) within your browser and click on `My First Post`.
+Navigate to your local site (usually http://localhost:1313/) within your browser and click on `My First Post`. The post contains two paragraphs. The **unsafe** paragraph demonstrates the issue when using `.Inner` from within the parent. The **safe** paragraphs demonstrates the workaround that uses **scratch** variables instead. It also logs a warning to the console about unexpected input.
